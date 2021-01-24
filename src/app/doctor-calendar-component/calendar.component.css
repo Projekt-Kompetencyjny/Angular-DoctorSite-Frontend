@@ -1,0 +1,124 @@
+.calendar-box {
+    width: 100%;
+    height: auto;
+    padding: 50px;
+    color: white;
+    background-color: rgba(115, 115, 115, 0.8);
+    position: absolute;
+}
+
+.calendar-box h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.mat-form {
+    width: 400px;
+    font-size: 30px;
+    margin-left: 1028px;
+}
+
+::ng-deep .mat-calendar-body {
+    font-size: 30px;
+}
+  
+::ng-deep .mat-calendar-period-button {
+    font-size: 30px;
+}
+  
+::ng-deep .mat-calendar-table-header th {
+    font-size: 30px;
+}
+  
+::ng-deep .mat-focused .mat-form-field-label {
+    color: white !important;
+}
+  
+::ng-deep .mat-form-field-flex {
+    color: white;
+    background-color: white;
+}
+  
+::ng-deep.mat-form-field-underline::before {
+    color: white;
+    background-color: white !important;
+}
+   
+::ng-deep.mat-form-field-underline {
+    color: white;
+    background-color: white !important;
+} 
+   
+::ng-deep.mat-form-field-ripple {
+    color: white;
+    background-color: white !important;
+}
+   
+::ng-deep .mat-form-field-label {
+    color: white !important;
+}
+    
+::ng-deep .mat-datepicker-toggle {
+    color: white !important;
+}
+  
+::ng-deep .mat-select-value {
+    color: white !important;
+}
+
+.form-button {
+    width: 300px;
+    height: 70px;
+    color: white;
+    background-color: rgb(0, 102, 255);
+    font-size: 27px;
+    margin-left: 90px;
+    border: 0;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+  
+.form-button:hover {
+    background-color: rgb(0, 82, 204);
+}
+  
+.form-button:focus {
+    outline: 0;
+}
+
+.reservation-box {
+    width: auto;
+    margin-top: 40px;
+    color: white;
+    background-color: rgba(95, 95, 95, 0.8);
+    border-style: solid;
+    border-width: 2px;
+}
+
+.data-block {
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.data-box {
+    display: inline-block;
+}
+  
+.data-box h2 {
+    font-size: 30px;
+    margin-top: 15px;
+    margin-left: 400px;
+    border-bottom: 2px solid white;
+}
+  
+.data-box h3 {
+    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 400px;
+}
+
+.button-block {
+    margin-left: 800px;
+    margin-bottom: 15px;
+    display: inline-block;
+}

@@ -1,0 +1,54 @@
+<div class="calendar-box">
+    <h1>Twój kalendarz</h1>
+    <form [formGroup]="form">
+        <mat-form-field class="mat-form" appearance="fill">
+            <mat-label>Wybierz Date</mat-label>
+            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" [matDatepickerFilter]="myFilter" formControlName="reservationDate" (dateChange)="date($event)">
+            <mat-datepicker-toggle class="datapicker-toggle" matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker touchUi #picker></mat-datepicker>
+        </mat-form-field>
+        <button (click)="checkReservation()" class="form-button">
+            Sprawdź Rezerwacje
+        </button>
+    </form>
+    <div *ngIf="reservations !== undefined; else noReservations" >
+        <div class="reservation-box" *ngFor="let reservation of reservations; let i = index">
+            <div class="data-block">
+                <div class="data-box">
+                    <h2>Data Wizyty:</h2>
+                    <h3>{{reservation.reservationDate}}</h3>
+                </div>
+                <div class="data-box">
+                    <h2>Godzina Wizyty:</h2>
+                    <h3>{{reservation.reservationTime}}</h3>
+                </div>
+                <div class="data-box">
+                    <h2>Rodzaj Wizyty:</h2>
+                    <h3>{{reservation.reservationType}}</h3>
+                </div>
+            </div>
+            <div class="data-block">
+                <div class="data-box">
+                    <h2>Imię Lekarza:</h2>
+                    <h3>{{reservation.firstName}}</h3>
+                </div>
+                <div style="margin-left: -13px;" class="data-box">
+                    <h2>Nazwisko Lekarza:</h2>
+                    <h3>{{reservation.lastName}}</h3>
+                </div>
+            </div>
+            <div class="button-block">
+                <div class="data-box">
+                    <button routerLink="create/{{reservation.reservationId}}" class="form-button">
+                        Rozpocznij Wizyte
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #noReservations>
+        <div>
+          <h1>BRAK REZERWACJI</h1>  
+        </div>
+    </ng-template>
+</div>

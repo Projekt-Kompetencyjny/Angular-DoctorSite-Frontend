@@ -1,0 +1,24 @@
+<div *ngIf="reservation" class="create-link-box">
+    <h1>Stwórz Spotkanie</h1>
+    <h2>Wejdź na link podany poniżej</h2>
+    <h2><a href="https://www.skype.com/pl/free-conference-call" target="_blank">Skype Free Conference Call</a></h2>
+    <h2>Nazwij swoje spotkanie i kliknij "Utwórz Bezpłatne Spotkanie"</h2>
+    <h2>Skopiuj Link i wklej go poniżej</h2>
+    <form [formGroup]="form">
+      <div class="form-group">
+        <input type="text" formControlName="meetingLink" class="form-control" placeholder="Tutaj wklej link"/>
+    </div>  
+    </form>
+    <h2>Link zostanie wysłany do twojego pacjenta</h2>
+    <h2>Link do spotkania będzie aktywny przez następne 24 godziny</h2>
+    <h2>Możesz już rozpocząć spotkanie i przejść do formularzu</h2>
+    <div class="info-box">
+        <div class="button-block">
+            <div class="data-box">
+                <button (click)="update()" routerLink="../../visit/{{reservation.reservationId}}" class="form-button">
+                    Przejdź do Formularzu
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

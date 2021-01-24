@@ -1,0 +1,57 @@
+<div *ngIf="reservation" class="visit-box">
+    <h1>Formularz Wizyty</h1>
+    <div class="personal_data_box">
+        <h2>Twój Link do Spotkania:<h3><a href="{{reservation.meetingLink}}" target="_blank">Kliknij tutaj!</a></h3></h2>
+        <h2>Imię i Nazwisko:<h3>{{reservation.firstName}} {{reservation.lastName}}</h3></h2>
+        <h2>Data Wizyty<h3>{{reservation.reservationDate}}</h3></h2>
+        <h2>Godzina Wizyty<h3>{{reservation.reservationTime}}</h3></h2>
+    </div>
+    <div class="visit-form-box">
+        <form [formGroup]="form">
+            <div class="form-group">
+                <label for="symptoms" class="label-control" >Objawy</label>
+                <textarea rows="4" formControlName="symptoms" class="form-control" ></textarea>
+            </div>
+            <div class="form-group">
+                <label for="diagnosis" class="label-control">Diagnoza</label>
+                <textarea rows="2" formControlName="diagnosis" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="medicine" class="label-control">Przepisane Leki</label>
+                <textarea rows="4" formControlName="medicine" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="taking" class="label-control">Zażywanie Leków</label>
+                <textarea rows="4" formControlName="taking" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="recommendations" class="label-control">Zalecenia</label>
+                <textarea rows="4" formControlName="recommendations" class="form-control"></textarea>
+            </div>
+            <div class="button-box">
+                <div class="button-position">
+                    <button (click)="onSubmitCheck()" class="form-button">
+                        Zakończ Wizyte
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="floating-box" *ngIf="accept">
+    <div class="accept-box">
+        <h1>Czy napewno chcesz zakończyć wizyte?</h1>
+        <h2>Wizyta zostanie automatycznie zapisana</h2>
+        <div class="button-position2">
+            <button (click)="onSubmitEnd()" class="form-button2">
+                TAK
+            </button>
+        </div>
+        <div class="button-position2">
+            <button (click)="onSubmitCheck()" class="form-button2">
+                NIE
+            </button>
+        </div>
+    </div>
+</div>

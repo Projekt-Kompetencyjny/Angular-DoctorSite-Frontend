@@ -1,0 +1,15 @@
+<nav class="horizontal_menu_box" *ngIf="doctor">
+  <ul>
+    <li><a routerLink="**" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fas fa-home"></i> Home</a></li>
+    <li><a routerLink="/patients" routerLinkActive="active">Twoi Pacjenci</a></li>
+    <li><a routerLink="/visitation" routerLinkActive="active">Twoje Wizyty</a></li>
+    <li><a routerLink="/calendar" routerLinkActive="active">Twój Kalendarz</a></li>
+    <li style="float:right"><a (click)="logout()"><i class="fas fa-sign-in-alt"></i> Wyloguj się</a></li>
+    <li style="float:right"><a routerLink="/profile" routerLinkActive="active"><i class="fas fa-user-md"></i> Profil</a></li>
+  </ul>
+</nav>
+
+<div [ngClass]="{ 'app-container': doctor }">
+  <alert></alert>
+  <router-outlet></router-outlet>
+</div>

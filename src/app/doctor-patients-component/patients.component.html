@@ -1,0 +1,38 @@
+<div class="patients-box">
+    <h1>Twoi Pacjenci</h1>
+    <div *ngIf="patients !== undefined; else noPatients">
+        <div class="patient-box" *ngFor="let patient of patients; let i = index">
+            <div class="data-block">
+                <div class="data-box">
+                    <h2>Imię Pacjenta:</h2>
+                    <h3>{{patient.firstName}}</h3>
+                </div>
+                <div class="data-box">
+                    <h2>Data Urodzenia:</h2>
+                    <h3>{{patient.dateOfBirth}}</h3>
+                </div>
+            </div>
+            <div class="data-block">
+                <div class="data-box">
+                    <h2>Nazwisko Pacjenta:</h2>
+                    <h3>{{patient.lastName}}</h3>
+                </div>
+                <div class="data-box">
+                    <h2>Telefon:</h2>
+                    <h3>{{patient.phone}}</h3>
+                </div>
+            </div>
+            <div class="data-block">
+                <div class="data-box">
+                    <h2>E-mail:</h2>
+                    <h3>{{patient.email}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #noPatients>
+        <div>
+          <h1>BRAK PACJENTÓW</h1>  
+        </div>
+    </ng-template>
+</div>
